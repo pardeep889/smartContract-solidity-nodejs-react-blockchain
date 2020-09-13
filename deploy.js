@@ -13,7 +13,6 @@ const deploy = async () => {
   const accounts = await web3.eth.getAccounts();
   const result = await new web3.eth.Contract(JSON.parse(interface)).deploy({
     data: bytecode,
-    arguments: ['Pardeep'],
   }).send({gas: '1000000', from: accounts[0]});
   console.log(result.options.address);
 };
