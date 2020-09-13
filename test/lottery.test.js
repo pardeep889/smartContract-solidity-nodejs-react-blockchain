@@ -94,5 +94,14 @@ describe('Lottery contract', () => {
         assert(diffrence > web3.utils.toWei('1.8', 'ether'));
      });
 
+     it('check players array is empty now', async() => {
+        const players = await lottery.methods.getPlayers().call();
+        assert(players.length === 0);
+     })
+
+     it('contract balance is zero now', async() => {
+         const contractBalance = await web3.eth.getBalance(lottery.options.address)
+         assert(contractBalance == 0);
+     })
      
 })
