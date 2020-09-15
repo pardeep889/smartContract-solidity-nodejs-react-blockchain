@@ -3,8 +3,13 @@ const Web3 = require("web3");
 
 const compiledFactory  = require("./build/CampaignFactory.json");
 
+const MNEMONIC =
+  "trust across range rubber amused number roast expand exact proud wear credit";
+const NETWORK_ADDRESS =
+  "https://rinkeby.infura.io/v3/e7b32d0b1dcc4ada82f487eadc238e6a";
+
 const provider = new HDWalletProvider(
-  process.env.MNEMONIC,
+  MNEMONIC,
   NETWORK_ADDRESS
 );
 
