@@ -71,8 +71,8 @@ describe('Compaigns', () => {
             value: web3.utils.toWei('10', 'ether')
         });
 
-        await campaign.methods.createRequest('A', web3.utils.toWei('5', 'ether'), accounts[0]).send({
-            from: accounts[1],
+        await campaign.methods.createRequest('A', web3.utils.toWei('5', 'ether'), accounts[1]).send({
+            from: accounts[0],
             gas: "1000000"
         });
         
@@ -84,7 +84,6 @@ describe('Compaigns', () => {
         
         let balance = await web3.eth.getBalance(accounts[1]);
         balance = web3.utils.fromWei(balance, 'ether');
-        console.log(balance);
         balance = parseFloat(balance);
         assert(balance > 104)
 
